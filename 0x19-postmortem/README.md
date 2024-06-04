@@ -1,4 +1,2 @@
-# `Postmortem`
-
-#
-![](https://i.imgflip.com/7f2140.jpg)
+# postmortem
+https://medium.com/@pabi.sedi/text-based-represented-of-the-flowchart-graph-based-on-the-post-morterm-report-0198aafb1454
