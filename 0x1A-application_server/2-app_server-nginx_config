@@ -1,32 +1,34 @@
 server {
-	listen 80 default_server;
-	listen [::]:80 ipv6only=on default_server;
-	server_name localhost;
+    listen 80 default_server;
+    listen [::]:80 ipv6only=on default_server;
+    server_name localhost;
 
-	root /var/www/html;
+    root /var/www/html;
 
-	location /hbnb_static/ {
-		alias /data/web_static/current/;
-		autoindex off;
-	}
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+        autoindex off;
+    }
 
-	index index.html index.htm index.nginx-debian.html;
-	rewrite ^/redirect_me https://github.com/besthor permanent;
+    index index.html index.htm index.nginx-debian.html;
+    rewrite ^/redirect_me https://github.com/thutomotaung  permanent;
 
-	error_page 404 /404.html;
+    error_page 404 /404.html;
 
-	location = /404.html {
-		root /usr/share/nginx/html;
-		internal;
-	}
+    location = /404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
 
-	location /airbnb-onepage/ {
-		include proxy_params;
-                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
-        }
-
-	location / {
-		try_files $uri $uri/ =404;
-	}
-
+    location /airbnb-onepage/ {
+        include proxy_params;
+        proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+    }
+    try_files $uri $uri/ =404;
 }
+
+Name	Username	IP	State	
+489005-web-01	ubuntu	100.26.239.42	running	
+489005-web-02	ubuntu	34.201.174.200	running	
+489005-lb-01	ubuntu	35.175.64.231	running
+
